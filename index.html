@@ -1,31 +1,76 @@
-<!-- Bilingual Language Switcher -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bilingual Website</title>
+    <title>My Bilingual Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo-placeholder.png" alt="Logo" />
+        <nav>
+            <ul>
+                <li><a href="#" onclick="switchLanguage('en')">English</a></li>
+                <li><a href="#" onclick="switchLanguage('pt')">Português</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1 data-lang-en="Welcome to Our Website" data-lang-pt="Bem-vindo ao nosso site">Welcome to Our Website</h1>
+        <p data-lang-en="Your description here." data-lang-pt="Sua descrição aqui.">Your description here.</p>
+    </section>
+
+    <section id="features">
+        <h2 data-lang-en="Features" data-lang-pt="Recursos">Features</h2>
+        <ul>
+            <li data-lang-en="Feature 1" data-lang-pt="Recurso 1">Feature 1</li>
+            <li data-lang-en="Feature 2" data-lang-pt="Recurso 2">Feature 2</li>
+            <li data-lang-en="Feature 3" data-lang-pt="Recurso 3">Feature 3</li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2 data-lang-en="Testimonials" data-lang-pt="Depoimentos">Testimonials</h2>
+        <p data-lang-en="Customer Feedback Here" data-lang-pt="Feedback de Clientes Aqui">Customer Feedback Here</p>
+    </section>
+
+    <section id="pricing">
+        <h2 data-lang-en="Pricing" data-lang-pt="Preços">Pricing</h2>
+        <p data-lang-en="Details about pricing" data-lang-pt="Detalhes sobre preços">Details about pricing</p>
+    </section>
+
+    <section id="about">
+        <h2 data-lang-en="About Us" data-lang-pt="Sobre Nós">About Us</h2>
+        <p data-lang-en="Information about the company" data-lang-pt="Informação sobre a empresa">Information about the company</p>
+    </section>
+
+    <section id="faq">
+        <h2 data-lang-en="FAQ" data-lang-pt="Perguntas Frequentes">FAQ</h2>
+        <p data-lang-en="Frequently asked questions" data-lang-pt="Perguntas feitas com frequência">Frequently asked questions</p>
+    </section>
+
+    <section id="contact">
+        <h2 data-lang-en="Contact Us" data-lang-pt="Fale Conosco">Contact Us</h2>
+        <form>
+            <label for="name" data-lang-en="Your Name" data-lang-pt="Seu Nome">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+            <label for="email" data-lang-en="Your Email" data-lang-pt="Seu E-mail">Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+            <label for="message" data-lang-en="Your Message" data-lang-pt="Sua Mensagem">Your Message</label>
+            <textarea id="message" placeholder="Enter your message"></textarea>
+            <button type="submit" data-lang-en="Send" data-lang-pt="Enviar">Send</button>
+        </form>
+    </section>
+
     <script>
         function switchLanguage(lang) {
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(e => {
-                e.style.display = (e.dataset.lang === lang) ? 'block' : 'none';
+            const elements = document.querySelectorAll('[data-lang-en], [data-lang-pt]');
+            elements.forEach(el => {
+                el.textContent = el.getAttribute(`data-lang-${lang}`);
             });
         }
     </script>
-</head>
-<body onload="switchLanguage('en')">
-    <div>
-        <button onclick="switchLanguage('en')">English</button>
-        <button onclick="switchLanguage('pt')">Português</button>
-    </div>
-    <div data-lang="en">
-        <h1>Welcome to Our Bilingual Website!</h1>
-        <p>This is the English version of the content.</p>
-    </div>
-    <div data-lang="pt" style="display: none;">
-        <h1>Bem-vindo ao nosso site bilíngue!</h1>
-        <p>Esta é a versão em português do conteúdo.</p>
-    </div>
 </body>
 </html>
