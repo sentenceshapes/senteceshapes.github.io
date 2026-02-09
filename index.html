@@ -1,1 +1,31 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Senteceshapes - Professional Website</title>\n    <link rel="stylesheet" href="styles.css">\n</head>\n<body>\n    <header>\n        <div class="hero">\n            <h1>Welcome to Senteceshapes</h1>\n            <p>Your tagline goes here</p>\n            <a href="#features" class="cta-button">Learn More</a>\n        </div>\n    </header>\n\n    <main>\n        <section id="features">\n            <h2>Features</h2>\n            <ul>\n                <li>Feature 1</li>\n                <li>Feature 2</li>\n                <li>Feature 3</li>\n            </ul>\n        </section>\n\n        <section id="testimonials">\n            <h2>Testimonials</h2>\n            <blockquote>\n                <p>"This is an amazing service!"</p>\n                <cite>- Happy Customer</cite>\n            </blockquote>\n        </section>\n\n        <section id="pricing">\n            <h2>Pricing</h2>\n            <p>Choose a plan that suits you.</p>\n            <table>\n                <tr>\n                    <th>Plan</th>\n                    <th>Price</th>\n                </tr>\n                <tr>\n                    <td>Basic</td>\n                    <td>$10/month</td>\n                </tr>\n                <tr>\n                    <td>Pro</td>\n                    <td>$20/month</td>\n                </tr>\n            </table>\n        </section>\n\n        <section id="contact">\n            <h2>Contact Us</h2>\n            <form>\n                <label for="name">Name:</label>\n                <input type="text" id="name" name="name" required>\n                <label for="email">Email:</label>\n                <input type="email" id="email" name="email" required>\n                <input type="submit" value="Submit">\n            </form>\n        </section>\n    </main>\n\n    <footer>\n        <p>&copy; 2026 Senteceshapes. All rights reserved.</p>\n    </footer>\n</body>\n</html>
+<!-- Bilingual Language Switcher -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilingual Website</title>
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(e => {
+                e.style.display = (e.dataset.lang === lang) ? 'block' : 'none';
+            });
+        }
+    </script>
+</head>
+<body onload="switchLanguage('en')">
+    <div>
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('pt')">Português</button>
+    </div>
+    <div data-lang="en">
+        <h1>Welcome to Our Bilingual Website!</h1>
+        <p>This is the English version of the content.</p>
+    </div>
+    <div data-lang="pt" style="display: none;">
+        <h1>Bem-vindo ao nosso site bilíngue!</h1>
+        <p>Esta é a versão em português do conteúdo.</p>
+    </div>
+</body>
+</html>
